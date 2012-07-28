@@ -1,0 +1,55 @@
+; configuration file for Geneanet scripts
+;
+; you should make a copy of this file in $HOME/.config/geneanet.ini
+; empty values will be ignored in scripts.
+;
+
+[connexion]
+user = ''
+passwd = ''
+proxy =
+; proxy = 'http://localhost:8080'
+; CURL class also support environment variable : export http_proxy=....
+;
+
+[grabber]
+; delai between each connexions (in seconds)
+delay = 1
+grab_deep = 5                        ; -1 no limit
+grab = parents, childs, spouse
+
+
+[geneanet]
+home        = 'http://www.geneanet.org/'
+default-url = 'http://gw3.geneanet.org/{user}?lang=fr&p=marc&n=quinton&oc=0'
+
+
+; About you, the submitter of the GEDCOM file. Write your own informations
+[submitter]
+name     = ''                        ; your last name, first name
+addr1    = ''                        ; your address 1
+addr2    = ''                        ; your address 2 (may be empty)
+city     = ''                        ; your city
+post     = ''                        ; your zip code
+state    = ''                        ; your state (or departement for french)
+country  = ''                        ; your country
+phone    = ''                        ; your phone number
+		
+; misc configuration values
+[misc]
+timezone  = 'Europe/Paris'          ; for date format (php tricks)
+
+
+; script information.
+[gedcomwriter]
+name     = 'GedcomWriter'             ; This script name
+version  = '0.1'                      ; Its version
+author   = 'Marc Quinton'             ; Author's name
+corp     = 'https://github.com/mqu/'  ; corps (société)
+
+; file format specifications
+[gedcom]
+version        = '5.5'            ; version of the GEDCOM type export
+language       = 'ENGLISH'        ; your language : FRENCH, ENGLISH
+charset        = 'ANSI'           ; charset ANSEL, ANSI(Windows), UNICODE (ISO-10646), UTF-8, Windows, Macintosh, UTF-8, MS/DOS
+places-format  = 'Ville,Code Lieu,Département,Région,Pays'
