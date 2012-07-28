@@ -21,7 +21,7 @@ grab = parents, childs, spouse
 
 [geneanet]
 home        = 'http://www.geneanet.org/'
-default-url = 'http://gw3.geneanet.org/{user}?lang=fr&p=marc&n=quinton&oc=0'
+default-url = 'http://gw3.geneanet.org/{user}?lang=fr&p=xxx&n=yyyy&oc=0'
 
 
 ; About you, the submitter of the GEDCOM file. Write your own informations
