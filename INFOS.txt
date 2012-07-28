@@ -1,0 +1,63 @@
+Vous trouverez ici des scripts permettant de lire et decoder des pages contenant
+des informations généalogiques issues du site Geneanet.org.
+
+- la classe GeneanetEntryParser permet de lire une page au format HTML et de récupérer un objet de classe Person,
+- la classe Grabber permet de retrouver toute une arborescence de page et de les lier les unes aux autres,
+- la classe GedcomWriter permet de génerer un fichier GEDCOM avec une arborescence de Person,
+- la classe Geneanet s'interface avec le site (authentification, ...),
+
+Les autres classes sont :
+
+ - Config : gestion de fichier de configuration,
+ - CURL : interface simple à CURL pour envoi de requetes (get, post),
+ - DbSqlite : interface simplifiée de Sqlite (base de données fichiers)
+ - DbCache : un cache fichier via base sqlite
+ - Person : gestion des attributs d'une personne avec ses liens familliaux
+ - simplehtmldom : analyseur de page HTML,
+ - URL : encodeur, décodeur d'adresses URL,
+ - GedcomDictionary : dictionnaire d'individus, notes pour génération des fichiers GEDCOM (stockage de référence ou id)
+
+
+Infos sur Généanet :
+
+le parser de page HTML fonctionne en ajoutant les attributs suivant aux URL :
+- langues : lang=en
+- version mobile : templ=mobile
+
+TODO :
+----
+ - supporter plus d'info concernant les unions,
+ - support des variables de configuration [grabber]grab_deep, grab,
+ - aide à la fusion d'arbres sur geneanet.
+ - gros nettoyage de code dans GedcomWriter,
+ - dissocier la class Person issue de GeneanetEntryParser de la class Person manipulée dans Grabber et GedcomWriter.
+
+---
+
+format GEDCOM:
+ - http://www.robert-weinland.org/gedc.php
+ - http://ohmi.celeonet.fr/format_gedcom/indexGED.html
+
+ - http://en.wikipedia.org/wiki/GEDCOM, http://fr.wikipedia.org/wiki/GEDCOM
+ - http://www.phpclasses.org/package/7009-PHP-Manage-genealogy-trees-for-a-family.html
+ - http://code.google.com/p/php-gedcom/
+ - GEDCOM-6 / XML : http://fr.geneawiki.com/index.php/GEDCOM_XML_6.0
+   - http://savannah.nongnu.org/projects/gedify/  conversion XML -> GEDCOM
+ - http://fr.geneawiki.com/index.php/Norme_Gedcom
+ - parsers :
+   - ruby :
+   		https://github.com/irtefa1/gedcom (gedcom -> xml)
+   		https://github.com/ciur-eugen/gedcom
+   	- c :
+   		http://gedcom-parse.sourceforge.net/
+   		
+   - php:
+    - gedcom writer : http://www.koders.com/php/fid15421713ED4FC703F6E8BFB8691F8AB8349A6E95.aspx?s=preg_match
+    
+---
+
+divers :
+ - loi des 100 ans (75) : 
+    - http://geneinfos.typepad.fr/geneinfos/2008/07/la-loi-des-100.html
+    - http://www.guide-genealogie.com/guide/loi.html
+
