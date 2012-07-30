@@ -24,7 +24,11 @@ le parser de page HTML fonctionne en ajoutant les attributs suivant aux URL :
 - langues : lang=en
 - version mobile : templ=mobile
 
-TODO :
+BUGs:
+----
+ - l'attribut "job" recupère sur certaines fiches autre chose que le métier.
+
+TODO:
 ----
  - supporter plus d'info concernant les unions,
  - support des variables de configuration [grabber]grab_deep, grab,
