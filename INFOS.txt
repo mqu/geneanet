@@ -26,7 +26,7 @@ le parser de page HTML fonctionne en ajoutant les attributs suivant aux URL :
 
 BUGs:
 ----
- - l'attribut "job" recupère sur certaines fiches autre chose que le métier.
+ - l'attribut "job" recupère sur certaines fiches d'autres éléments qui n'ont pas de rapport avec le métier.
 
 TODO:
 ----
